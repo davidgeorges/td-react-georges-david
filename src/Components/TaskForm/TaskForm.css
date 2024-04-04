@@ -1,0 +1,17 @@
+.task-form {
+    margin-bottom: 20px;
+    display:  flex;
+}
+
+.task-input {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    width: 60.3%;
+}
+
+.task-input:focus {
+    border-color: #007bff;
+    outline: none;
+}

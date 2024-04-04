@@ -1,16 +1,18 @@
+// App.js
 import React, { useState, useEffect } from 'react';
-import TaskForm from './Components/TaskForm';
-import TaskList from './Components/TaskList';
-import './App.css'
+import TaskForm from './Components/TaskForm/TaskForm';
+import TaskList from './Components/TaskList/TaskList';
+import './App.css';
+
 const App = () => {
   const [tasks, setTasks] = useState([]);
   const [filter, setFilter] = useState('all');
 
-  //Trigger once
+  // Trigger once
   useEffect(() => {
     const storedTasks = JSON.parse(localStorage.getItem('tasks'));
     console.log(storedTasks)
-    if (storedTasks.length) {
+    if (storedTasks && storedTasks.length) {
       setTasks(storedTasks);
     }
   }, []);
@@ -39,16 +41,11 @@ const App = () => {
   });
 
   return (
-    <div data-cy="app">
-      
+    <div className="app">
       <h1>ToDo List</h1>
-
       <TaskForm addTask={addTask} />
-      <TaskList
-        tasks={filteredTasks}
-        toggleTask={toggleTask}
-      />
-      <div>
+      <TaskList tasks={filteredTasks} toggleTask={toggleTask} />
+      <div className="button-container">
         <button data-cy="filter-btn-all" onClick={() => setFilter('all')}>All</button>
         <button data-cy="filter-btn-done" onClick={() => setFilter('done')}>Completed</button>
         <button data-cy="filter-btn-undone" onClick={() => setFilter('undone')}>Not Completed</button>

@@ -1,13 +1,14 @@
 import React from 'react';
+import './TaskList.css';
 
 const TaskList = ({ tasks, toggleTask }) => {
   return (
-    <ul data-cy="task-list">
+    <ul className="task-list">
       {tasks.map(task => (
         <li
           key={task.id}
           onClick={() => toggleTask(task.id)}
-          style={{ textDecoration: task.completed ? 'line-through' : 'none' }}
+          className={`task-list-item ${task.completed ? 'completed' : ''}`}
           data-cy="task-item"
         >
           {task.text}

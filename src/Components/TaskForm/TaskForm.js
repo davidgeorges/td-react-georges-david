@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
+import './TaskForm.css';
 
 const TaskForm = ({ addTask }) => {
   const [taskText, setTaskText] = useState('');
 
-  //Trigger at every new char in the input
   const handleChange = (e) => {
     setTaskText(e.target.value);
   };
 
-  //Trigger when pressing enter or click on add task
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!taskText.trim()) return;
@@ -17,15 +16,15 @@ const TaskForm = ({ addTask }) => {
   };
 
   return (
-    <form data-cy="task-form" onSubmit={handleSubmit}>
+    <form className="task-form" onSubmit={handleSubmit}>
       <input
         type="text"
         value={taskText}
         onChange={handleChange}
+        className="task-input"
         placeholder="Enter task"
-        data-cy="task-input"
       />
-      <button type="submit" data-cy="add-task-btn">Add Task</button>
+      <button className="button" type="submit" >Add Task</button>
     </form>
   );
 };

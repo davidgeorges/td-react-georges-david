@@ -3,7 +3,7 @@ import './TaskList.css';
 
 const TaskList = ({ tasks, toggleTask }) => {
   return (
-    <ul className="task-list">
+    <ul data-cy="task-list" className="task-list">
       {tasks.map(task => (
         <li
           key={task.id}

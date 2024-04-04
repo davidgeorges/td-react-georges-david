@@ -46,9 +46,9 @@ const App = () => {
       <TaskForm addTask={addTask} />
       <TaskList tasks={filteredTasks} toggleTask={toggleTask} />
       <div className="button-container">
-        <button data-cy="filter-btn-all" onClick={() => setFilter('all')}>All</button>
-        <button data-cy="filter-btn-done" onClick={() => setFilter('done')}>Completed</button>
-        <button data-cy="filter-btn-undone" onClick={() => setFilter('undone')}>Not Completed</button>
+        <button data-cy="filter-btn-all" onClick={() => setFilter('all')}>Toutes</button>
+        <button data-cy="filter-btn-done" onClick={() => setFilter('done')}>Complétées</button>
+        <button data-cy="filter-btn-undone" onClick={() => setFilter('undone')}>Non complétées</button>
       </div>
     </div>
   );

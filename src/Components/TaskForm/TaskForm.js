@@ -16,15 +16,16 @@ const TaskForm = ({ addTask }) => {
   };
 
   return (
-    <form className="task-form" onSubmit={handleSubmit}>
+    <form data-cy="task-form" className="task-form" onSubmit={handleSubmit}>
       <input
+        data-cy="task-input"
         type="text"
         value={taskText}
         onChange={handleChange}
         className="task-input"
         placeholder="Enter task"
       />
-      <button className="button" type="submit" >Add Task</button>
+      <button data-cy="add-task-btn" className="button" type="submit" >Add Task</button>
     </form>
   );
 };

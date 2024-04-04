@@ -1,4 +1,3 @@
-// App.js
 import React, { useState, useEffect } from 'react';
 import TaskForm from './Components/TaskForm/TaskForm';
 import TaskList from './Components/TaskList/TaskList';
